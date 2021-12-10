@@ -13,11 +13,14 @@ import java.util.Locale;
 public class DataBase {
     private final String LOGIN = "root";
     private final String PASSWORD = "Fedorenko20";
+    private final String DB_NAME = "mydb";
+    private final String HOST = "localhost";
+    private final String PORT = "3306";
 
     private Connection connection = null;
 
     public DataBase(){
-        String connStr = "jdbc:mysql://localhost/";
+        String connStr = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DB_NAME;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(connStr, LOGIN, PASSWORD);
@@ -82,8 +85,8 @@ public class DataBase {
         }
     }
 
-    public void insert(String tableName, String values){
-        String sql = "INSERT INTO " + tableName + " VALUES (" + values + ")";
+    public void insert(String tableName, String values, String names){
+        String sql = "INSERT INTO " + tableName + " (" + names + ")" + " VALUES (" + values + ")";
 
         PreparedStatement prSt;
         try {

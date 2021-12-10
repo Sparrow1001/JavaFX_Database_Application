@@ -26,17 +26,14 @@
             <children>
                 <VBox layoutX="50.0" layoutY="20.0" prefHeight="200.0" prefWidth="100.0" spacing="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                        <Text fx:id="textContract" strokeType="OUTSIDE" strokeWidth="0.0" text="contract" />
-                        <Text fx:id="textCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="counter" />
-                        <Text fx:id="textEmploee" strokeType="OUTSIDE" strokeWidth="0.0" text="emploee" />
-                        <Text fx:id="textEquipment" strokeType="OUTSIDE" strokeWidth="0.0" text="equipment" />
-                        <Text fx:id="textMaterials" strokeType="OUTSIDE" strokeWidth="0.0" text="materials" />
-                        <Text fx:id="textOrders" strokeType="OUTSIDE" strokeWidth="0.0" text="orders" />
-                        <Text fx:id="textProduction" strokeType="OUTSIDE" strokeWidth="0.0" text="production" />
-                        <Text fx:id="textProducts" strokeType="OUTSIDE" strokeWidth="0.0" text="products" />
-                        <Text fx:id="textProfession" strokeType="OUTSIDE" strokeWidth="0.0" text="profession" />
-                        <Text fx:id="textStorage" strokeType="OUTSIDE" strokeWidth="0.0" text="storage" />
-                        <Text fx:id="textSuppliers" strokeType="OUTSIDE" strokeWidth="0.0" text="suppliers" />
+                        <Text fx:id="textDocuments" strokeType="OUTSIDE" strokeWidth="0.0" text="Documents" />
+                        <Text fx:id="textDocumentType" strokeType="OUTSIDE" strokeWidth="0.0" text="DocumentType" />
+                        <Text fx:id="textCounter" strokeType="OUTSIDE" strokeWidth="0.0" text="Counter" />
+                        <Text fx:id="textPositions" strokeType="OUTSIDE" strokeWidth="0.0" text="Positions" />
+                        <Text fx:id="textProducts" strokeType="OUTSIDE" strokeWidth="0.0" text="Products" />
+                        <Text fx:id="textRecipients" strokeType="OUTSIDE" strokeWidth="0.0" text="Recipients" />
+                        <Text fx:id="textStuff" strokeType="OUTSIDE" strokeWidth="0.0" text="Stuff" />
+                        <Text fx:id="textSuppliers" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers" />
                     </children>
                     <padding>
                         <Insets left="10.0" top="5.0" />

@@ -27,25 +27,19 @@ public class MainController {
     @FXML
     private TableView<Entity> tableView;
     @FXML
-    private Text textContract;
+    private Text textDocuments;
     @FXML
     private Text textCounter;
     @FXML
-    private Text textEmploee;
+    private Text textDocumentType;
     @FXML
-    private Text textEquipment;
+    private Text textPositions;
     @FXML
-    private Text textMaterials;
+    private Text textRecipients;
     @FXML
-    private Text textOrders;
-    @FXML
-    private Text textProduction;
+    private Text textStuff;
     @FXML
     private Text textProducts;
-    @FXML
-    private Text textProfession;
-    @FXML
-    private Text textStorage;
     @FXML
     private Text textSuppliers;
     @FXML
@@ -55,16 +49,13 @@ public class MainController {
     @FXML
     public void initialize(){
         this.tableController = new tableController();
-        textContract.setOnMouseClicked(new TextClickHandler(textContract));
+        textDocuments.setOnMouseClicked(new TextClickHandler(textDocuments));
         textCounter.setOnMouseClicked(new TextClickHandler(textCounter));
-        textEmploee.setOnMouseClicked(new TextClickHandler(textEmploee));
-        textEquipment.setOnMouseClicked(new TextClickHandler(textEquipment));
-        textMaterials.setOnMouseClicked(new TextClickHandler(textMaterials));
-        textOrders.setOnMouseClicked(new TextClickHandler(textOrders));
-        textProduction.setOnMouseClicked(new TextClickHandler(textProduction));
+        textDocumentType.setOnMouseClicked(new TextClickHandler(textDocumentType));
+        textPositions.setOnMouseClicked(new TextClickHandler(textPositions));
+        textRecipients.setOnMouseClicked(new TextClickHandler(textRecipients));
+        textStuff.setOnMouseClicked(new TextClickHandler(textStuff));
         textProducts.setOnMouseClicked(new TextClickHandler(textProducts));
-        textProfession.setOnMouseClicked(new TextClickHandler(textProfession));
-        textStorage.setOnMouseClicked(new TextClickHandler(textStorage));
         textSuppliers.setOnMouseClicked(new TextClickHandler(textSuppliers));
     }
 
@@ -125,7 +116,7 @@ public class MainController {
     @FXML
     public void onClickTerminal(){
         try {
-            FXMLLoader loader = new FXMLLoader(ClassLoader.getSystemResource("Presentation/TerminalScene/terminalScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(ClassLoader.getSystemResource("Presentation/TerminalWindow/terminalScene.fxml"));
             Parent root = loader.load();
 
             Stage stage = new Stage();
@@ -147,7 +138,7 @@ public class MainController {
 
         public tableController(){
             database = new DataBase();
-            switchCurrentTable("materials");
+            switchCurrentTable("Documents");
             setTableRowFactory();
         }
 
@@ -179,14 +170,14 @@ public class MainController {
 
         public void switchCurrentTable(String name){
             switch (name) {
-                case "contract":
- //                   currentTable = new Contract();
+                case "Documents":
+                    currentTable = new Documents();
                     break;
-                case "counter":
- //                   currentTable = new Counter();
+                case "Counter":
+                    currentTable = new Counter();
                     break;
-                case "emploee":
-  //                  currentTable = new Emploee();
+                case "DocumentType":
+                    currentTable = new DocumentType();
                     break;
                 case "equipment":
  //                   currentTable = new Equipment();
@@ -213,7 +204,7 @@ public class MainController {
      //               currentTable = new Suppliers();
                     break;
             }
-    //        refreshTable();
+            refreshTable();
         }
 
         public void refreshTable(){

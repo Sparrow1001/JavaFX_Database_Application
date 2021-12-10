@@ -43,17 +43,21 @@ public class AddSceneController {
     @FXML
     public void onClickApplyButton(){
         String values = "";
+        String names = "";
         for (Object tf : hBox.getChildren()){
             TextField t = (TextField) tf;
             if (t.getText().isEmpty()) {
-                showAlert("Input not valid", "Field cannot be empty.");
-                return;
-            } else
-                values += "'" + t.getText().trim() + "', ";
+//                showAlert("Input not valid", "Field cannot be empty.");
+                continue;
+            } else {
+                    names += t.getPromptText() + ", ";
+                    values += "'" + t.getText().trim() + "', ";
+                }
         }
         values = values.substring(0, values.length() - 2);
+        names = names.substring(0, names.length() - 2);
         DataBase database = new DataBase();
-        database.insert(table.getClass().getSimpleName().toLowerCase(Locale.ROOT), values);
+        database.insert(table.getClass().getSimpleName().toLowerCase(Locale.ROOT), values, names);
         Stage stage = (Stage) hBox.getScene().getWindow();
         mController.tableController.refreshTable();
         stage.close();

@@ -5,7 +5,6 @@ module JavaFX.Database.Application {
     requires javafx.base;
     requires java.desktop;
     requires java.sql;
-    opens sample;
     opens Domain.Model;
     opens Presentation.AddScene;
     opens Presentation.MainWindow;
