@@ -179,29 +179,20 @@ public class MainController {
                 case "DocumentType":
                     currentTable = new DocumentType();
                     break;
-                case "equipment":
- //                   currentTable = new Equipment();
+                case "Positions":
+                    currentTable = new Positions();
                     break;
-                case "materials":
-  //                  currentTable = new Materials();
+                case "Products":
+                    currentTable = new Products();
                    break;
-                case "orders":
-  //                  currentTable = new Orders();
+                case "Recipients":
+                    currentTable = new Recipients();
                     break;
-                case "production":
-  //                  currentTable = new Production();
+                case "Stuff":
+                    currentTable = new Stuff();
                     break;
-                case "products":
-    //                currentTable = new Products();
-                    break;
-                case "profession":
- //                   currentTable = new Profession();
-                    break;
-                case "storage":
-   //                 currentTable = new Storage();
-                    break;
-                case "suppliers":
-     //               currentTable = new Suppliers();
+                case "Suppliers":
+                    currentTable = new Suppliers();
                     break;
             }
             refreshTable();

@@ -1,6 +1,9 @@
 package Domain.Model;
 
-public class Suppliers {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Suppliers implements Entity {
 
     private int supplierCode;
     private String companyName;
@@ -13,6 +16,13 @@ public class Suppliers {
         this.address = address;
         this.inn = inn;
     }
+
+    public Suppliers() {
+    }
+
+    public final static ArrayList<String> LIST_OF_ATTRIBUTES = new ArrayList<>(Arrays.asList(
+            "supplierCode", "companyName", "address", "inn"
+    ));
 
     public int getSupplierCode() {
         return supplierCode;
@@ -44,5 +54,30 @@ public class Suppliers {
 
     public void setInn(String inn) {
         this.inn = inn;
+    }
+
+    @Override
+    public Integer getCountOfParams() {
+        return LIST_OF_ATTRIBUTES.size();
+    }
+
+    @Override
+    public ArrayList<String> getListOfAttributes() {
+        return LIST_OF_ATTRIBUTES;
+    }
+
+    @Override
+    public Entity setParams(ArrayList<String> params) {
+        this.supplierCode = Integer.parseInt(params.get(0));
+        this.companyName = params.get(1);
+        this.address = params.get(2);
+        this.inn = params.get(3);
+
+        return this;
+    }
+
+    @Override
+    public Integer getPrimaryKey() {
+        return this.supplierCode;
     }
 }
